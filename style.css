@@ -419,7 +419,7 @@ nav a:hover {
   left: 50%;
   width: 0;
   height: 0;
-  background: radial-gradient(circle, var(--gold), var(--terracotta));
+  background: radial-gradient(circle, var(--restaurant-orange), var(--restaurant-green));
   border-radius: 50%;
   transition: all 0.5s ease;
   transform: translate(-50%, -50%);
