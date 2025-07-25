@@ -3,102 +3,371 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Achilles Greek Grill</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achilles Greek Grill | Authentic Greek Cuisine in Baxter, TN</title>
+    <meta name="description" content="Experience authentic Greek cuisine and Southern comfort food at Achilles Greek Grill in Baxter, TN. Fresh ingredients, traditional recipes, and warm hospitality.">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap"
-        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 
 <body>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Particle System -->
+    <div class="particles" id="particles"></div>
+
+
 
     <header>
         <h1>Achilles Greek Grill</h1>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#menu">Menu</a>
-            <a href="#location">Location</a>
-            <a href="#order">Order</a>
+        <nav role="navigation" aria-label="Main navigation">
+            <a href="#home" aria-label="Go to Home section" data-section="home">Home</a>
+            <a href="#about" aria-label="Go to About section" data-section="about">About</a>
+            <a href="#menu" aria-label="Go to Menu section" data-section="menu">Menu</a>
+            <a href="#location" aria-label="Go to Location section" data-section="location">Location</a>
+            <a href="#order" aria-label="Go to Order section" data-section="order">Order</a>
         </nav>
     </header>
 
-    <div class="container">
-        <section id="home" class="section">
-            <h2>Welcome!</h2>
-            <p>Authentic Greek cuisine meets Southern comfort in Baxter, TN.</p>
-            <p><strong>Now open at 303 Broad St, Baxter, TN!</strong></p>
+    <main class="container">
+        <section id="home" class="section" data-bg-color="#faf8f3">
+            <h2>Καλώς ήρθατε! Welcome!</h2>
+            <p>Experience the rich flavors of authentic Greek cuisine combined with beloved Southern comfort food in the heart of Baxter, Tennessee.</p>
+            <div class="highlight-box">
+                <strong>🏛️ Now Open at 303 Broad St, Baxter, TN! 🏛️</strong>
+            </div>
+            <p>From traditional gyros and fresh Greek salads to hearty Southern favorites, we bring you the best of both worlds with recipes passed down through generations.</p>
         </section>
 
-        <section id="about" class="section">
-            <h2>About Us</h2>
-            <p>Achilles Greek Grill brings Greek classics and Southern favorites, plus beer on tap.</p>
-            <p>We served the Sparta community for three years and have now relocated to Baxter.</p>
+        <div class="greek-divider"></div>
+
+        <section id="about" class="section" data-bg-color="#f5f5f0">
+            <h2>About Achilles Greek Grill</h2>
+            <p>Named after the legendary Greek hero, Achilles Greek Grill embodies strength, tradition, and excellence in every dish we serve. Our passion for authentic Greek flavors runs deep, just like our roots in culinary tradition.</p>
+            <p>After proudly serving the Sparta community for three years, we've brought our beloved recipes and warm hospitality to Baxter. We combine time-honored Greek cooking techniques with the finest local ingredients to create an unforgettable dining experience.</p>
+            <p><strong>What makes us special:</strong> Fresh ingredients daily, traditional family recipes, beer on tap, and a commitment to making every guest feel like family.</p>
         </section>
 
-        <section id="menu" class="section">
-            <h2>Our Menu</h2>
+        <div class="greek-divider"></div>
+
+        <section id="menu" class="section" data-bg-color="#f8f8ff">
+            <h2>Discover Our Menu</h2>
 
             <div class="gallery">
-                    <img src="images/lunch_menu.jpg" alt="Lunch Special Menu" onclick="openModal(this)">
-                    <img src="images/front_page.jpg" alt="Greek Menu 1" onclick="openModal(this)">
-                    <img src="images/back_page.jpg" alt="Greek menu 2" onclick="openModal(this)">
-                    <img src="images/pizza.jpg" alt="Pizza Menu" onclick="openModal(this)">
-                    <img src="images/dessert_menu.jpg" alt="Dessert Menu" onclick="openModal(this)">
+                <img src="images/lunch_menu.jpg" alt="Daily lunch specials featuring Greek and Southern favorites" onclick="openModal(this)" loading="lazy">
+                <img src="images/front_page.jpg" alt="Main menu with authentic Greek dishes and appetizers" onclick="openModal(this)" loading="lazy">
+                <img src="images/back_page.jpg" alt="Extended menu featuring entrees, sides, and beverages" onclick="openModal(this)" loading="lazy">
+                <img src="images/pizza.jpg" alt="Specialty pizzas with Greek and Mediterranean toppings" onclick="openModal(this)" loading="lazy">
+                <img src="images/dessert_menu.jpg" alt="Traditional Greek desserts and sweet treats" onclick="openModal(this)" loading="lazy">
             </div>
 
-            <p>Browse our full menu from Greek classics to Southern favorites, and more.</p>
-            <div id="imageModal" class="modal" onclick="closeModal()">
-                <span class="close">&times;</span>
-                <img class="modal-content" id="modalImg">
+            <p>Explore our carefully crafted menu featuring authentic Greek classics like moussaka, souvlaki, and fresh tzatziki, alongside Southern favorites that have made us a local treasure. Each dish is prepared with passion and the finest ingredients.</p>
+            
+            <div id="imageModal" class="modal" onclick="closeModal()" role="dialog" aria-label="Menu image viewer" aria-hidden="true">
+                <span class="close" onclick="closeModal()" aria-label="Close menu image">&times;</span>
+                <img class="modal-content" id="modalImg" alt="">
             </div>
         </section>
 
-        <section id="location" class="section">
-            <h2>Location & Hours</h2>
-            <p>📍 <strong>303 Broad St, Baxter, TN 38544</strong></p>
-            <p>📞 <a href="tel:+19312554048">(931) 255‑4048</a></p>
+        <div class="greek-divider"></div>
+
+        <section id="location" class="section" data-bg-color="#faf8f3">
+            <h2>Visit Us Today</h2>
+            <div class="highlight-box">
+                📍 <strong>303 Broad St, Baxter, TN 38544</strong>
+            </div>
+            
+            <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin: 2rem 0;">
+                <a href="tel:+19312554048" class="contact-link" aria-label="Call Achilles Greek Grill">
+                    📞 (931) 255‑4048
+                </a>
+                <a href="https://www.google.com/maps/place/303+Broad+St,+Baxter,+TN+38544" target="_blank" rel="noopener" class="contact-link" aria-label="Get directions to Achilles Greek Grill">
+                    🗺️ Get Directions
+                </a>
+            </div>
 
             <div class="map">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3270.8956314736443!2d-85.63928062467632!3d36.14943547243806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8866790ce1d3a01b%3A0x4baf06c5b2191629!2s303%20Broad%20St%2C%20Baxter%2C%20TN%2038544!5e0!3m2!1sen!2sus!4v1721750000000!5m2!1sen!2sus"
-                    width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
+                    allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Achilles Greek Grill location map">
                 </iframe>
             </div>
 
-            <h3>Hours:</h3>
+            <h3 style="color: var(--greek-blue); font-family: 'Playfair Display', serif; margin: 2rem 0 1rem;">Operating Hours:</h3>
             <ul>
-                <li><strong>Mon–Thu:</strong> 8 AM – 8 PM</li>
-                <li><strong>Fri:</strong> 8 AM – 9 PM</li>
-                <li><strong>Sat:</strong> 8 AM – 9 PM</li>
-                <li><strong>Sun:</strong> Closed</li>
+                <li><strong>Monday – Thursday:</strong> <span>8:00 AM – 8:00 PM</span></li>
+                <li><strong>Friday:</strong> <span>8:00 AM – 9:00 PM</span></li>
+                <li><strong>Saturday:</strong> <span>8:00 AM – 9:00 PM</span></li>
+                <li><strong>Sunday:</strong> <span>Closed for family time</span></li>
             </ul>
         </section>
 
-        <section id="order" class="section">
-            <h2>Order</h2>
-            <p>📞 <a href="tel:+19312554048">(931) 255‑4048</a></p>
-            <p>Follow our <a href="https://m.facebook.com/100070267571822/" target="_blank">Facebook page</a> for the
-                latest updates!</p>
+        <div class="greek-divider"></div>
+
+        <section id="order" class="section" data-bg-color="#f5f5f0">
+            <h2>Order & Connect</h2>
+            <p>Ready to experience the flavors of Greece? We're here to serve you with the warmth and hospitality that defines Greek culture.</p>
+            
+            <div style="text-align: center; margin: 2rem 0;">
+                <a href="tel:+19312554048" class="contact-link" aria-label="Call to place an order">
+                    📞 Call to Order: (931) 255‑4048
+                </a>
+                <a href="https://m.facebook.com/100070267571822/" target="_blank" rel="noopener" class="contact-link" aria-label="Follow us on Facebook">
+                    📘 Follow Our Facebook
+                </a>
+            </div>
+            
+            <p>Stay connected with us on Facebook for daily specials, seasonal menu updates, community events, and behind-the-scenes glimpses of our kitchen where tradition meets innovation.</p>
         </section>
-    </div>
+    </main>
 
     <footer>
-        <p>&copy; 2025 Achilles Greek Grill • All rights reserved</p>
+        <p>&copy; 2025 Achilles Greek Grill | Bringing authentic Greek hospitality to Baxter, Tennessee</p>
+        <p style="margin-top: 0.5rem; opacity: 0.8;">Χάρηκα που σας γνώρισα - Pleased to meet you</p>
     </footer>
+
     <script>
+        // Enhanced modal functionality with keyboard support
         function openModal(img) {
             const modal = document.getElementById("imageModal");
             const modalImg = document.getElementById("modalImg");
             modal.style.display = "block";
             modalImg.src = img.src;
+            modalImg.alt = img.alt;
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+            modal.focus();
         }
 
         function closeModal() {
-            document.getElementById("imageModal").style.display = "none";
+            const modal = document.getElementById("imageModal");
+            modal.style.display = "none";
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = 'auto';
         }
-    </script>
 
+        // Advanced JavaScript Effects
+        class AchillesEffects {
+            constructor() {
+                this.particles = [];
+                this.canvas = document.getElementById('backgroundCanvas');
+                this.ctx = this.canvas ? this.canvas.getContext('2d') : null;
+                this.init();
+            }
+
+            init() {
+                this.setupCanvas();
+                this.createParticles();
+                this.setupScrollEffects();
+                this.setupIntersectionObserver();
+                this.setupParallax();
+                this.setupDynamicBackground();
+                this.animate();
+            }
+
+            setupCanvas() {
+                if (!this.canvas || !this.ctx) return;
+                
+                const resizeCanvas = () => {
+                    this.canvas.width = window.innerWidth;
+                    this.canvas.height = window.innerHeight;
+                };
+                
+                resizeCanvas();
+                window.addEventListener('resize', resizeCanvas);
+            }
+
+            createParticles() {
+                const particleContainer = document.getElementById('particles');
+                if (!particleContainer) return;
+
+                for (let i = 0; i < 15; i++) {
+                    const particle = document.createElement('div');
+                    particle.className = 'particle';
+                    particle.style.left = Math.random() * 100 + '%';
+                    particle.style.width = particle.style.height = (Math.random() * 4 + 2) + 'px';
+                    particle.style.animationDelay = Math.random() * 15 + 's';
+                    particle.style.animationDuration = (Math.random() * 10 + 15) + 's';
+                    particleContainer.appendChild(particle);
+                }
+            }
+
+            setupScrollEffects() {
+                const scrollProgress = document.getElementById('scrollProgress');
+                if (!scrollProgress) return;
+
+                window.addEventListener('scroll', () => {
+                    const scrollTop = window.pageYOffset;
+                    const docHeight = document.body.scrollHeight - window.innerHeight;
+                    const scrollPercent = scrollTop / docHeight;
+                    scrollProgress.style.transform = `scaleX(${scrollPercent})`;
+                });
+            }
+
+            setupIntersectionObserver() {
+                const observerOptions = {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -100px 0px'
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('section-visible');
+                            this.animateSection(entry.target);
+                        }
+                    });
+                }, observerOptions);
+
+                document.querySelectorAll('.section').forEach(section => {
+                    observer.observe(section);
+                });
+            }
+
+            animateSection(section) {
+                const elements = section.querySelectorAll('h2, p, .highlight-box, .gallery img');
+                elements.forEach((el, index) => {
+                    setTimeout(() => {
+                        el.style.animation = `slideInUp 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards`;
+                    }, index * 100);
+                });
+            }
+
+            setupParallax() {
+                let ticking = false;
+
+                window.addEventListener('scroll', () => {
+                    if (!ticking) {
+                        requestAnimationFrame(() => {
+                            this.updateParallax();
+                            ticking = false;
+                        });
+                        ticking = true;
+                    }
+                });
+            }
+
+            updateParallax() {
+                const scrolled = window.pageYOffset;
+                const sections = document.querySelectorAll('.section');
+                
+                sections.forEach((section, index) => {
+                    const speed = 0.5 + (index * 0.1);
+                    const yPos = -(scrolled * speed);
+                    section.style.transform = `translate3d(0, ${yPos * 0.1}px, 0)`;
+                });
+            }
+
+            setupDynamicBackground() {
+                const sections = document.querySelectorAll('.section[data-bg-color]');
+                
+                window.addEventListener('scroll', () => {
+                    const scrollPosition = window.pageYOffset + window.innerHeight / 2;
+                    
+                    sections.forEach(section => {
+                        const sectionTop = section.offsetTop;
+                        const sectionBottom = sectionTop + section.offsetHeight;
+                        
+                        if (scrollPosition >= sectionTop && scrollPosition <= sectionBottom) {
+                            const bgColor = section.dataset.bgColor;
+                            if (bgColor) {
+                                document.body.style.background = `linear-gradient(135deg, ${bgColor} 0%, var(--warm-grey) 100%)`;
+                            }
+                        }
+                    });
+                });
+            }
+
+            animate() {
+                if (!this.ctx) return;
+                
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                
+                // Draw floating geometric shapes
+                this.drawFloatingShapes();
+                
+                requestAnimationFrame(() => this.animate());
+            }
+
+            drawFloatingShapes() {
+                const time = Date.now() * 0.0005;
+                
+                for (let i = 0; i < 5; i++) {
+                    const x = Math.sin(time + i) * 100 + this.canvas.width / 2;
+                    const y = Math.cos(time + i * 0.5) * 50 + this.canvas.height / 2;
+                    const size = Math.sin(time + i) * 10 + 20;
+                    
+                    this.ctx.save();
+                    this.ctx.globalAlpha = 0.1;
+                    this.ctx.fillStyle = i % 2 === 0 ? '#d4af37' : '#0066cc';
+                    this.ctx.beginPath();
+                    this.ctx.arc(x, y, size, 0, Math.PI * 2);
+                    this.ctx.fill();
+                    this.ctx.restore();
+                }
+            }
+        }
+
+        // Initialize effects when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new AchillesEffects();
+        });
+
+        // Keyboard navigation for modal
+        document.addEventListener('keydown', function(e) {
+            const modal = document.getElementById("imageModal");
+            if (modal.style.display === "block" && e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Enhanced smooth scrolling for navigation links
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mouse trail effect
+        let mouseTrail = [];
+        document.addEventListener('mousemove', (e) => {
+            mouseTrail.push({
+                x: e.clientX,
+                y: e.clientY,
+                time: Date.now()
+            });
+            
+            // Keep only recent trail points
+            mouseTrail = mouseTrail.filter(point => Date.now() - point.time < 1000);
+        });
+
+        // Add loading animation
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '0';
+            document.body.style.animation = 'fadeIn 1s ease-out forwards';
+        });
+
+        // Add CSS for loading animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
 </body>
 
 </html>
