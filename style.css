@@ -467,7 +467,7 @@ nav a:hover {
 
 /* Enhanced Footer */
 footer {
-  background: linear-gradient(135deg, var(--deep-blue) 0%, var(--greek-blue) 50%, var(--azure) 100%);
+  background: linear-gradient(135deg, var(--dark-green) 0%, var(--restaurant-green) 50%, var(--restaurant-orange) 100%);
   color: var(--greek-white);
   text-align: center;
   padding: 3rem 2rem;
