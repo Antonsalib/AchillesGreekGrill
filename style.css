@@ -160,6 +160,7 @@ header h1 {
   position: relative;
   z-index: 2;
   animation: titleFloat 6s ease-in-out infinite;
+  color: var(--greek-white) !important;
 }
 
 @keyframes titleFloat {
