@@ -358,7 +358,7 @@ nav a:hover {
 
 /* Enhanced Highlight Box */
 .highlight-box {
-  background: linear-gradient(135deg, var(--gold), var(--dark-gold), var(--terracotta));
+  background: linear-gradient(135deg, var(--restaurant-orange), var(--dark-orange), var(--restaurant-green));
   color: var(--greek-white);
   padding: 2rem;
   border-radius: 15px;
@@ -366,7 +366,7 @@ nav a:hover {
   text-align: center;
   font-weight: 600;
   font-size: 1.3rem;
-  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+  box-shadow: 0 10px 30px rgba(255, 140, 0, 0.4);
   position: relative;
   overflow: hidden;
   animation: pulseGlow 3s ease-in-out infinite;
