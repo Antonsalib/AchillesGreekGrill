@@ -547,11 +547,12 @@ footer::before {
   
   .gallery {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1rem;
+    margin: 2rem 0;
   }
-  
+
   .gallery img {
-    height: 220px;
+    height: 200px;
   }
   
   .contact-link {
