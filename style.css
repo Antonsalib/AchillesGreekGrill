@@ -373,8 +373,8 @@ nav a:hover {
 }
 
 @keyframes pulseGlow {
-  0%, 100% { box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4); }
-  50% { box-shadow: 0 15px 40px rgba(212, 175, 55, 0.6); }
+  0%, 100% { box-shadow: 0 10px 30px rgba(255, 140, 0, 0.4); }
+  50% { box-shadow: 0 15px 40px rgba(255, 140, 0, 0.6); }
 }
 
 .highlight-box::before {
