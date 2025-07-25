@@ -2,8 +2,6 @@
 <html lang="en">
 
 <head>
-    <!-- Lightbox CSS -->
-<link href="css/lightbox.css" rel="stylesheet">
     <meta charset="UTF-8">
     <title>Achilles Greek Grill</title>
     <link rel="stylesheet" href="style.css">
@@ -41,24 +39,18 @@
             <h2>Our Menu</h2>
 
             <div class="gallery">
-                <a href="images/lunch_menu.jpg" data-lightbox="menu" data-title="Lunch Special Menu">
-                <img src="images/lunch_menu.jpg" alt="Lunch Special Menu">
-                </a>
-                <a href="images/front_page.jpg" data-lightbox="menu" data-title="Greek Menu 1">
-                <img src="images/front_page.jpg" alt="Greek Menu 1">
-                </a>
-                <a href="images/back_page.jpg" data-lightbox="menu" data-title="Greek Menu 1\2">
-                <img src="images/back_page.jpg" alt="Greek menu 2">
-                </a>
-                <a href="images/pizza.jpg" data-lightbox="menu" data-title="Pizza Menu">
-                <img src="images/pizza.jpg" alt="Pizza Menu">
-                </a>
-                <a href="images/dessert_menu.jpg" data-lightbox="menu" data-title="Dessert Menu">
-                <img src="images/dessert_menu.jpg" alt="Dessert Menu">
-                </a>
+                    <img src="images/lunch_menu.jpg" alt="Lunch Special Menu" onclick="openModal(this)">
+                    <img src="images/front_page.jpg" alt="Greek Menu 1" onclick="openModal(this)">
+                    <img src="images/back_page.jpg" alt="Greek menu 2" onclick="openModal(this)">
+                    <img src="images/pizza.jpg" alt="Pizza Menu" onclick="openModal(this)">
+                    <img src="images/dessert_menu.jpg" alt="Dessert Menu" onclick="openModal(this)">
             </div>
 
             <p>Browse our full menu from Greek classics to Southern favorites, and more.</p>
+            <div id="imageModal" class="modal" onclick="closeModal()">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="modalImg">
+            </div>
         </section>
 
         <section id="location" class="section">
@@ -94,10 +86,19 @@
     <footer>
         <p>&copy; 2025 Achilles Greek Grill • All rights reserved</p>
     </footer>
-<!-- Lightbox JS -->
- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function openModal(img) {
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("modalImg");
+            modal.style.display = "block";
+            modalImg.src = img.src;
+        }
 
-<script src="js/lightbox-plus-jquery.js"></script>
+        function closeModal() {
+            document.getElementById("imageModal").style.display = "none";
+        }
+    </script>
+
 </body>
 
 </html>
