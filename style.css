@@ -210,9 +210,9 @@ nav a:hover::before {
 }
 
 nav a:hover {
-  background: linear-gradient(45deg, var(--gold), var(--dark-gold));
+  background: linear-gradient(45deg, var(--restaurant-orange), var(--dark-orange));
   transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+  box-shadow: 0 10px 25px rgba(255, 140, 0, 0.4);
 }
 
 /* Container */
