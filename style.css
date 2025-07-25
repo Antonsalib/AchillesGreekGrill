@@ -268,7 +268,7 @@ nav a:hover {
   right: 20px;
   width: 60px;
   height: 60px;
-  background: radial-gradient(circle, var(--gold) 0%, transparent 70%);
+  background: radial-gradient(circle, var(--restaurant-orange) 0%, transparent 70%);
   border-radius: 50%;
   opacity: 0.1;
   animation: floatingDecor 8s ease-in-out infinite;
