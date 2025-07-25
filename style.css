@@ -566,13 +566,19 @@ footer::before {
   header {
     padding: 1.5rem 1rem;
   }
-  
+
   .section {
     padding: 1.5rem;
   }
-  
+
+  .gallery {
+    gap: 0.8rem;
+    margin: 1.5rem 0;
+  }
+
   .gallery img {
-    height: 200px;
+    height: 180px;
+    border-radius: 8px;
   }
 }
 
