@@ -606,6 +606,6 @@ html {
 /* Focus styles for accessibility */
 nav a:focus,
 .contact-link:focus {
-  outline: 3px solid var(--gold);
+  outline: 3px solid var(--restaurant-orange);
   outline-offset: 2px;
 }
