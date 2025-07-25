@@ -56,14 +56,14 @@
             <h2>Discover Our Menu</h2>
 
             <div class="gallery">
-                <img src="images/lunch_menu.jpg" alt="Daily lunch specials featuring Greek and Southern favorites" onclick="openModal(this)" loading="lazy">
-                <img src="images/front_page.jpg" alt="Main menu with authentic Greek dishes and appetizers" onclick="openModal(this)" loading="lazy">
-                <img src="images/back_page.jpg" alt="Extended menu featuring entrees, sides, and beverages" onclick="openModal(this)" loading="lazy">
-                <img src="images/pizza.jpg" alt="Specialty pizzas with Greek and Mediterranean toppings" onclick="openModal(this)" loading="lazy">
-                <img src="images/dessert_menu.jpg" alt="Traditional Greek desserts and sweet treats" onclick="openModal(this)" loading="lazy">
+                <img src="images/lunch_menu.jpg" alt="Daily lunch specials featuring Greek and Southern favorites" onclick="openModal(this)" loading="lazy" decoding="async">
+                <img src="images/front_page.jpg" alt="Main menu with authentic Greek dishes and appetizers" onclick="openModal(this)" loading="lazy" decoding="async">
+                <img src="images/back_page.jpg" alt="Extended menu featuring entrees, sides, and beverages" onclick="openModal(this)" loading="lazy" decoding="async">
+                <img src="images/pizza.jpg" alt="Specialty pizzas with Greek and Mediterranean toppings" onclick="openModal(this)" loading="lazy" decoding="async">
+                <img src="images/dessert_menu.jpg" alt="Traditional Greek desserts and sweet treats" onclick="openModal(this)" loading="lazy" decoding="async">
             </div>
 
-            <p>Explore our carefully crafted menu featuring authentic Greek classics like moussaka, souvlaki, and fresh tzatziki, alongside Southern favorites that have made us a local treasure. Each dish is prepared with passion and the finest ingredients.</p>
+            <p>Explore our carefully crafted menu featuring authentic Greek classics like gyro, chicken, and fresh tzatziki, alongside Southern favorites that have made us a local treasure. Each dish is prepared with passion and the finest ingredients.</p>
             
             <div id="imageModal" class="modal" onclick="closeModal()" role="dialog" aria-label="Menu image viewer" aria-hidden="true">
                 <span class="close" onclick="closeModal()" aria-label="Close menu image">&times;</span>
@@ -97,12 +97,12 @@
                 </iframe>
             </div>
 
-            <h3 style="color: var(--greek-blue); font-family: 'Playfair Display', serif; margin: 2rem 0 1rem;">Operating Hours:</h3>
+            <h3 style="color: var(--restaurant-green); font-family: 'Playfair Display', serif; margin: 2rem 0 1rem;">Operating Hours:</h3>
             <ul>
                 <li><strong>Monday – Thursday:</strong> <span>8:00 AM – 8:00 PM</span></li>
                 <li><strong>Friday:</strong> <span>8:00 AM – 9:00 PM</span></li>
                 <li><strong>Saturday:</strong> <span>8:00 AM – 9:00 PM</span></li>
-                <li><strong>Sunday:</strong> <span>Closed for family time</span></li>
+                <li><strong>Sunday:</strong> <span>Closed</span></li>
             </ul>
         </section>
 
@@ -185,7 +185,7 @@
                 const particleContainer = document.getElementById('particles');
                 if (!particleContainer) return;
 
-                for (let i = 0; i < 15; i++) {
+                for (let i = 0; i < 8; i++) {
                     const particle = document.createElement('div');
                     particle.className = 'particle';
                     particle.style.left = Math.random() * 100 + '%';
@@ -287,8 +287,10 @@
                 
                 this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
                 
-                // Draw floating geometric shapes
-                this.drawFloatingShapes();
+                // Draw floating geometric shapes (reduced frequency)
+                if (Date.now() % 3 === 0) {
+                    this.drawFloatingShapes();
+                }
                 
                 requestAnimationFrame(() => this.animate());
             }
@@ -296,14 +298,14 @@
             drawFloatingShapes() {
                 const time = Date.now() * 0.0005;
                 
-                for (let i = 0; i < 5; i++) {
+                for (let i = 0; i < 3; i++) {
                     const x = Math.sin(time + i) * 100 + this.canvas.width / 2;
                     const y = Math.cos(time + i * 0.5) * 50 + this.canvas.height / 2;
                     const size = Math.sin(time + i) * 10 + 20;
                     
                     this.ctx.save();
                     this.ctx.globalAlpha = 0.1;
-                    this.ctx.fillStyle = i % 2 === 0 ? '#d4af37' : '#0066cc';
+                    this.ctx.fillStyle = i % 2 === 0 ? '#FF8C00' : '#228B22';
                     this.ctx.beginPath();
                     this.ctx.arc(x, y, size, 0, Math.PI * 2);
                     this.ctx.fill();
@@ -339,17 +341,22 @@
             });
         });
 
-        // Mouse trail effect
+        // Mouse trail effect (throttled for performance)
         let mouseTrail = [];
+        let lastMouseMove = 0;
         document.addEventListener('mousemove', (e) => {
-            mouseTrail.push({
-                x: e.clientX,
-                y: e.clientY,
-                time: Date.now()
-            });
-            
-            // Keep only recent trail points
-            mouseTrail = mouseTrail.filter(point => Date.now() - point.time < 1000);
+            const now = Date.now();
+            if (now - lastMouseMove > 50) { // Throttle to 20fps
+                mouseTrail.push({
+                    x: e.clientX,
+                    y: e.clientY,
+                    time: now
+                });
+
+                // Keep only recent trail points
+                mouseTrail = mouseTrail.filter(point => now - point.time < 500);
+                lastMouseMove = now;
+            }
         });
 
         // Add loading animation

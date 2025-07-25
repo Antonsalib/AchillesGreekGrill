@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap');
 
 :root {
-  --greek-blue: #0066cc;
+  --restaurant-green: #228B22;
+  --dark-green: #006400;
+  --restaurant-orange: #FF8C00;
+  --dark-orange: #FF6600;
   --greek-white: #ffffff;
-  --gold: #d4af37;
-  --dark-gold: #b8941f;
   --cream: #faf8f3;
   --terracotta: #d2691e;
   --olive: #6b8e23;
-  --deep-blue: #003d7a;
   --warm-grey: #f5f5f0;
   --text-dark: #2c3e50;
   --border-light: #e8e6e0;
   --marble: #f8f8ff;
-  --azure: #007fff;
+  --light-green: #90EE90;
 }
 
 * {
@@ -74,10 +74,10 @@ body::after {
 }
 
 @keyframes floatingBackground {
-  0%, 100% { transform: translateX(0) translateY(0) rotate(0deg); }
-  25% { transform: translateX(-20px) translateY(-10px) rotate(1deg); }
-  50% { transform: translateX(20px) translateY(10px) rotate(-1deg); }
-  75% { transform: translateX(-10px) translateY(20px) rotate(0.5deg); }
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  25% { transform: translate3d(-10px, -5px, 0) rotate(0.5deg); }
+  50% { transform: translate3d(10px, 5px, 0) rotate(-0.5deg); }
+  75% { transform: translate3d(-5px, 10px, 0) rotate(0.25deg); }
 }
 
 @keyframes columnShift {
@@ -93,7 +93,7 @@ body::after {
   width: 100%;
   height: 4px;
   z-index: 1000;
-  background: linear-gradient(90deg, var(--gold), var(--terracotta), var(--olive));
+  background: linear-gradient(90deg, var(--restaurant-orange), var(--restaurant-green), var(--dark-green));
   transform-origin: left;
   transform: scaleX(0);
   transition: transform 0.1s ease;
@@ -101,7 +101,7 @@ body::after {
 
 /* Enhanced Header */
 header {
-  background: linear-gradient(135deg, var(--greek-blue) 0%, var(--deep-blue) 70%, var(--azure) 100%);
+  background: linear-gradient(135deg, var(--restaurant-green) 0%, var(--dark-green) 70%, var(--restaurant-orange) 100%) !important;
   color: var(--greek-white);
   padding: 2rem 1rem;
   text-align: center;
@@ -137,8 +137,8 @@ header::after {
   height: 6px;
   background: repeating-linear-gradient(
     90deg,
-    var(--gold) 0px,
-    var(--gold) 15px,
+    var(--restaurant-orange) 0px,
+    var(--restaurant-orange) 15px,
     var(--greek-white) 15px,
     var(--greek-white) 30px
   );
@@ -160,6 +160,7 @@ header h1 {
   position: relative;
   z-index: 2;
   animation: titleFloat 6s ease-in-out infinite;
+  color: var(--greek-white) !important;
 }
 
 @keyframes titleFloat {
@@ -198,7 +199,7 @@ nav a::before {
   inset: 0;
   border-radius: 30px;
   padding: 2px;
-  background: linear-gradient(45deg, var(--gold), var(--terracotta), var(--olive));
+  background: linear-gradient(45deg, var(--restaurant-orange), var(--restaurant-green), var(--dark-orange));
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: xor;
   opacity: 0;
@@ -210,9 +211,9 @@ nav a:hover::before {
 }
 
 nav a:hover {
-  background: linear-gradient(45deg, var(--gold), var(--dark-gold));
+  background: linear-gradient(45deg, var(--restaurant-orange), var(--dark-orange));
   transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+  box-shadow: 0 10px 25px rgba(255, 140, 0, 0.4);
 }
 
 /* Container */
@@ -229,12 +230,13 @@ nav a:hover {
   padding: 3rem;
   background: rgba(255, 255, 255, 0.9);
   border-radius: 20px;
-  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   position: relative;
   overflow: hidden;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.4s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
 }
 
 .section::before {
@@ -244,7 +246,7 @@ nav a:hover {
   left: 0;
   right: 0;
   height: 5px;
-  background: linear-gradient(90deg, var(--gold), var(--terracotta), var(--olive), var(--gold));
+  background: linear-gradient(90deg, var(--restaurant-orange), var(--restaurant-green), var(--dark-orange), var(--restaurant-orange));
   background-size: 200% 100%;
   animation: gradientFlow 4s ease infinite;
 }
@@ -267,7 +269,7 @@ nav a:hover {
   right: 20px;
   width: 60px;
   height: 60px;
-  background: radial-gradient(circle, var(--gold) 0%, transparent 70%);
+  background: radial-gradient(circle, var(--restaurant-orange) 0%, transparent 70%);
   border-radius: 50%;
   opacity: 0.1;
   animation: floatingDecor 8s ease-in-out infinite;
@@ -279,7 +281,7 @@ nav a:hover {
 }
 
 .section h2 {
-  color: var(--greek-blue);
+  color: var(--restaurant-green) !important;
   font-family: 'Playfair Display', serif;
   font-size: clamp(1.8rem, 4vw, 2.8rem);
   font-weight: 600;
@@ -296,7 +298,7 @@ nav a:hover {
   left: 0;
   width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, var(--gold), var(--terracotta));
+  background: linear-gradient(90deg, var(--restaurant-orange), var(--restaurant-green));
   border-radius: 2px;
   animation: underlineGrow 2s ease-out;
 }
@@ -325,48 +327,39 @@ nav a:hover {
 /* Enhanced Gallery */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
   margin: 3rem 0;
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .gallery img {
   width: 100%;
-  height: 280px;
+  height: 250px;
   object-fit: cover;
-  border-radius: 15px;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
-  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
-  border: 3px solid transparent;
-  position: relative;
-  overflow: hidden;
+  border: 2px solid transparent;
+  display: block;
+  will-change: transform;
 }
 
-.gallery img::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  transition: left 0.6s ease;
-}
 
-.gallery img:hover::before {
-  left: 100%;
-}
 
 .gallery img:hover {
-  transform: translateY(-12px) scale(1.05) rotateY(5deg);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-  border-color: var(--gold);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+  border-color: var(--restaurant-orange);
 }
 
 /* Enhanced Highlight Box */
 .highlight-box {
-  background: linear-gradient(135deg, var(--gold), var(--dark-gold), var(--terracotta));
+  background: linear-gradient(135deg, var(--restaurant-orange), var(--dark-orange), var(--restaurant-green));
   color: var(--greek-white);
   padding: 2rem;
   border-radius: 15px;
@@ -374,15 +367,15 @@ nav a:hover {
   text-align: center;
   font-weight: 600;
   font-size: 1.3rem;
-  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+  box-shadow: 0 10px 30px rgba(255, 140, 0, 0.4);
   position: relative;
   overflow: hidden;
   animation: pulseGlow 3s ease-in-out infinite;
 }
 
 @keyframes pulseGlow {
-  0%, 100% { box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4); }
-  50% { box-shadow: 0 15px 40px rgba(212, 175, 55, 0.6); }
+  0%, 100% { box-shadow: 0 10px 30px rgba(255, 140, 0, 0.4); }
+  50% { box-shadow: 0 15px 40px rgba(255, 140, 0, 0.6); }
 }
 
 .highlight-box::before {
@@ -406,7 +399,7 @@ nav a:hover {
   display: inline-flex;
   align-items: center;
   gap: 0.7rem;
-  color: var(--greek-blue);
+  color: var(--restaurant-green);
   text-decoration: none;
   font-weight: 600;
   font-size: 1.2rem;
@@ -427,7 +420,7 @@ nav a:hover {
   left: 50%;
   width: 0;
   height: 0;
-  background: radial-gradient(circle, var(--gold), var(--terracotta));
+  background: radial-gradient(circle, var(--restaurant-orange), var(--restaurant-green));
   border-radius: 50%;
   transition: all 0.5s ease;
   transform: translate(-50%, -50%);
@@ -442,7 +435,7 @@ nav a:hover {
 .contact-link:hover {
   color: var(--greek-white);
   transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 15px 35px rgba(212, 175, 55, 0.4);
+  box-shadow: 0 15px 35px rgba(255, 140, 0, 0.4);
 }
 
 /* Enhanced Modal */
@@ -475,7 +468,7 @@ nav a:hover {
 
 /* Enhanced Footer */
 footer {
-  background: linear-gradient(135deg, var(--deep-blue) 0%, var(--greek-blue) 50%, var(--azure) 100%);
+  background: linear-gradient(135deg, var(--dark-green) 0%, var(--restaurant-green) 50%, var(--restaurant-orange) 100%);
   color: var(--greek-white);
   text-align: center;
   padding: 3rem 2rem;
@@ -492,8 +485,8 @@ footer::before {
   height: 6px;
   background: repeating-linear-gradient(
     90deg,
-    var(--gold) 0px,
-    var(--gold) 20px,
+    var(--restaurant-orange) 0px,
+    var(--restaurant-orange) 20px,
     var(--greek-white) 20px,
     var(--greek-white) 40px
   );
@@ -513,7 +506,7 @@ footer::before {
 
 .particle {
   position: absolute;
-  background: var(--gold);
+  background: var(--restaurant-orange);
   border-radius: 50%;
   opacity: 0.1;
   animation: floatParticle 15s linear infinite;
@@ -555,11 +548,12 @@ footer::before {
   
   .gallery {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1rem;
+    margin: 2rem 0;
   }
-  
+
   .gallery img {
-    height: 220px;
+    height: 200px;
   }
   
   .contact-link {
@@ -573,13 +567,19 @@ footer::before {
   header {
     padding: 1.5rem 1rem;
   }
-  
+
   .section {
     padding: 1.5rem;
   }
-  
+
+  .gallery {
+    gap: 0.8rem;
+    margin: 1.5rem 0;
+  }
+
   .gallery img {
-    height: 200px;
+    height: 180px;
+    border-radius: 8px;
   }
 }
 
@@ -607,6 +607,6 @@ html {
 /* Focus styles for accessibility */
 nav a:focus,
 .contact-link:focus {
-  outline: 3px solid var(--gold);
+  outline: 3px solid var(--restaurant-orange);
   outline-offset: 2px;
 }
