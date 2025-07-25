@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap');
 
 :root {
-  --greek-blue: #0066cc;
+  --restaurant-green: #228B22;
+  --dark-green: #006400;
+  --restaurant-orange: #FF8C00;
+  --dark-orange: #FF6600;
   --greek-white: #ffffff;
-  --gold: #d4af37;
-  --dark-gold: #b8941f;
   --cream: #faf8f3;
   --terracotta: #d2691e;
   --olive: #6b8e23;
-  --deep-blue: #003d7a;
   --warm-grey: #f5f5f0;
   --text-dark: #2c3e50;
   --border-light: #e8e6e0;
   --marble: #f8f8ff;
-  --azure: #007fff;
+  --light-green: #90EE90;
 }
 
 * {
