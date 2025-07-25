@@ -505,7 +505,7 @@ footer::before {
 
 .particle {
   position: absolute;
-  background: var(--gold);
+  background: var(--restaurant-orange);
   border-radius: 50%;
   opacity: 0.1;
   animation: floatParticle 15s linear infinite;
