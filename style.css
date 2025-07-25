@@ -137,8 +137,8 @@ header::after {
   height: 6px;
   background: repeating-linear-gradient(
     90deg,
-    var(--gold) 0px,
-    var(--gold) 15px,
+    var(--restaurant-orange) 0px,
+    var(--restaurant-orange) 15px,
     var(--greek-white) 15px,
     var(--greek-white) 30px
   );
