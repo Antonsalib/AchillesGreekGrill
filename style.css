@@ -101,7 +101,7 @@ body::after {
 
 /* Enhanced Header */
 header {
-  background: linear-gradient(135deg, var(--greek-blue) 0%, var(--deep-blue) 70%, var(--azure) 100%);
+  background: linear-gradient(135deg, var(--restaurant-green) 0%, var(--dark-green) 70%, var(--restaurant-orange) 100%);
   color: var(--greek-white);
   padding: 2rem 1rem;
   text-align: center;
