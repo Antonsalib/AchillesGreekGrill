@@ -245,7 +245,7 @@ nav a:hover {
   left: 0;
   right: 0;
   height: 5px;
-  background: linear-gradient(90deg, var(--gold), var(--terracotta), var(--olive), var(--gold));
+  background: linear-gradient(90deg, var(--restaurant-orange), var(--restaurant-green), var(--dark-orange), var(--restaurant-orange));
   background-size: 200% 100%;
   animation: gradientFlow 4s ease infinite;
 }
