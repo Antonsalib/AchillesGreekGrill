@@ -74,10 +74,10 @@ body::after {
 }
 
 @keyframes floatingBackground {
-  0%, 100% { transform: translateX(0) translateY(0) rotate(0deg); }
-  25% { transform: translateX(-20px) translateY(-10px) rotate(1deg); }
-  50% { transform: translateX(20px) translateY(10px) rotate(-1deg); }
-  75% { transform: translateX(-10px) translateY(20px) rotate(0.5deg); }
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  25% { transform: translate3d(-10px, -5px, 0) rotate(0.5deg); }
+  50% { transform: translate3d(10px, 5px, 0) rotate(-0.5deg); }
+  75% { transform: translate3d(-5px, 10px, 0) rotate(0.25deg); }
 }
 
 @keyframes columnShift {
